@@ -1,62 +1,75 @@
-# FIN_BOT: AI-Powered MBA Finance Assistant
+# MBA Finance Assistance Bot (FIN_BOT)
 
-An intelligent, conversational AI agent built using **Dialogflow Essentials (ES)** and deployed seamlessly via **Kommunicate**. This bot functions as a virtual financial advisor capable of handling core corporate finance queries, loan breakdowns, and investment performance metrics.
-
----
-
-## 🚀 Live Demo & Interface
-
-The chatbot features an intuitive chat widget that handles complex finance terminology and breaks it down into easy-to-digest interactive lists and summaries.
-
-### Active Bot Interaction
-*Figure 1: FIN_BOT actively responding to an "EMI" query via the Kommunicate customer dashboard.*
+An AI-powered conversational agent designed to provide instant explanations, calculations, and advisory responses for core financial concepts like EMI, NPV, IRR, and Credit Scores. Built using **Dialogflow Essentials (ES)** and integrated with **Kommunicate** for a seamless, interactive user interface.
 
 ---
 
-## 🛠️ Core Capabilities & Intents
-
-The agent is trained to identify financial terminology, process user intent, and provide structured default responses for:
-* **Time Value of Money:** Net Present Value (NPV), Internal Rate of Return (IRR).
-* **Corporate Financial Metrics:** Current Ratio, Debt-to-Equity, Break-Even Analysis, ROI.
-* **Personal Finance:** EMI Calculators, Tax Saving Strategies, Insurance, and Investment Advisory.
+## 🚀 Features
+* **Core Finance Explanations:** Instant breakdown of complex concepts (NPV, IRR, Break-Even Point).
+* **Interactive Advisory:** Dedicated intents for budgeting, loan advice, and investment strategies.
+* **Kommunicate Integration:** Clean, web-ready chat widget for real-time user engagement.
 
 ---
 
-## 🏗️ Architecture & Configuration Steps
+## 🛠️ Step-by-Step Implementation & Screenshots
 
-### 1. Agent Creation & Intent Mapping
-The bot's core logic is managed within Dialogflow Essentials, where custom intents are defined for various financial parameters.
+### 1. Dialogflow Agent & Intent Architecture
+The bot's intelligence is built on modular intents mapping to specific financial queries. Training phrases ensure high intent-matching accuracy.
 
-*Figure 2: Creating and initializing the finance assistant agent.*
+<p align="center">
+  <img src="./screenshots/Agent_Creation.png" alt="Agent Creation" width="800"/>
+  <br><i>Figure 1: Initializing the Dialogflow Finance Assistance Agent</i>
+</p>
 
-*Figure 3: Main dashboard displaying the comprehensive list of custom financial intents.*
-
----
-
-### 2. Training Phrases & Natural Language Processing (NLP)
-Each intent is mapped against realistic user expressions (e.g., "Explain NPV", "How to calculate NPV") to train the underlying machine learning model.
-
-*Figure 4: Configuration of training phrases inside the `NPV_Intent` dashboard.*
-
----
-
-### 3. Structured Text Responses
-Responses are designed with clean formatting to ensure clear readability when rendered inside live chat windows.
-
-*Figure 5: Setting up structured text response variants for user execution queries.*
+<p align="center">
+  <img src="./screenshots/Intent_List.png" alt="Intent List" width="800"/>
+  <br><i>Figure 2: Complete List of Configured Financial Intents</i>
+</p>
 
 ---
 
-### 4. Google Cloud IAM & Fulfillment Security
-To bridge the agent securely with external platforms or fulfillment webhooks, a Google Cloud Service Account key is required.
+### 2. Deep Dive: Intent Configurations & Responses
+Each intent (e.g., `NPV_Intent`) contains specialized user expressions and structured text responses explaining financial dynamics clearly to the end user.
 
-*Figure 6: Navigating the Google Cloud Console IAM & Admin panel to generate a service account key.*
+<p align="center">
+  <img src="./screenshots/NPV_Intent.png" alt="NPV Intent Configuration" width="800"/>
+  <br><i>Figure 3: Training Phrases mapped for Net Present Value (NPV) Queries</i>
+</p>
 
-*Figure 7: Generating and downloading the secure private JSON credential key.*
+<p align="center">
+  <img src="./screenshots/Response.png" alt="Text Responses" width="800"/>
+  <br><i>Figure 4: Defining Clear, Structured Text Outputs for the Agent</i>
+</p>
 
 ---
 
-## 💻 Tech Stack
-* **Natural Language Processing:** Google Dialogflow (ES)
-* **Deployment & UI Integration:** Kommunicate Hybrid Platform
-* **Cloud Infrastructure:** Google Cloud Platform (GCP) IAM
+### 3. Google Cloud IAM & Service Account Authentication
+To securely connect Dialogflow with external platforms like Kommunicate, a Google Cloud Service Account key is generated.
+
+<p align="center">
+  <img src="./screenshots/Service_Account.png" alt="Service Account Panel" width="800"/>
+  <br><i>Figure 5: Navigating to Service Account Keys within Google Cloud Console</i>
+</p>
+
+<p align="center">
+  <img src="./screenshots/JSON_Key.png" alt="Generating JSON Key" width="800"/>
+  <br><i>Figure 6: Generating and Downloading the Private JSON Key for Authentication</i>
+</p>
+
+---
+
+### 4. Kommunicate Integration & Live Demo
+The downloaded JSON key is uploaded to the Kommunicate dashboard to sync the Dialogflow fulfillment engine with the frontend chat widget interface.
+
+<p align="center">
+  <img src="./screenshots/Kommunicate_Setup.png" alt="Kommunicate Chat Widget Live" width="800"/>
+  <br><i>Figure 7: Live Interaction with FIN_BOT rendering structured EMI details in Kommunicate</i>
+</p>
+
+---
+
+## 📦 How to Run Locally
+1. Clone this repository.
+2. Export your Dialogflow Agent zip bundle and import it into your own Dialogflow Console.
+3. Setup a Google Cloud Service account and download your credentials key.
+4. Integrate with Kommunicate via their **Bot Integrations** dashboard using the JSON key.
